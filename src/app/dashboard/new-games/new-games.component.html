@@ -1,0 +1,20 @@
+<mat-card class="games-list-card">
+  <img mat-card-image [src]="gamesList.image" [alt]="gamesList.id" />
+  <div *ngFor="let category of gamesList.categories">
+    <div class="corner-ribbon top-right sticky" *ngIf="category">
+      <div
+        [ngClass]="{
+          newRibbon: category === eCategory.New,
+          slotsRibbon: category === eCategory.Slots,
+          topRibbon: category === eCategory.Top
+        }"
+      >
+        {{ category | titlecase }}
+      </div>
+    </div>
+  </div>
+  <div class="info-on-hover">
+    <div class="text">{{ gamesList.name }}</div>
+    <button mat-raised-button color="primary">Play</button>
+  </div>
+</mat-card>

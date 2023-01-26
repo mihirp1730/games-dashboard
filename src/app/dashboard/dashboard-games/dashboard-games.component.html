@@ -1,0 +1,9 @@
+<ng-container class="container">
+  <div *ngIf="(games$ | async)?.length !== 0">
+    <div class="card-container">
+      <div *ngFor="let gamesList of games$ | async; trackBy: trackBy">
+        <app-new-games [gamesList]="gamesList"></app-new-games>
+      </div>
+    </div>
+  </div>
+</ng-container>

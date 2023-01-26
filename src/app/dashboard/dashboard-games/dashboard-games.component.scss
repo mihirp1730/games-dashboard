@@ -1,0 +1,25 @@
+.card-container{
+    width: 97%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 16px;
+    padding: 30px;
+
+    @media screen and (min-width: 600px) {
+        grid-template-columns: 1fr;
+    }
+    @media screen and (min-width: 601px) and (max-width: 870px) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    @media screen and (min-width: 871px)  and (max-width: 1024px)  {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    @media screen and (min-width: 1025px) and (max-width: 1300px) {
+        grid-template-columns: repeat(5, 1fr);
+    }
+    @media screen and (min-width: 1301px) {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+

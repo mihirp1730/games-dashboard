@@ -1,0 +1,70 @@
+.games-list-card {
+    height: calc(100% - 10px);
+    padding: 0;
+    border-radius: 15px;
+    overflow: hidden;
+    width: 200px;
+
+    .mat-card-image {
+        opacity: 1;
+        height: 185px;
+        object-fit: cover;
+        width: 100%;
+        margin-top: 0;
+        backface-visibility: hidden;
+    }
+}
+.corner-ribbon {
+    width: 155px;
+    background: #8DC63F;
+    position: absolute;
+    top: 25px;
+    left: -50px;
+    text-align: center;
+    line-height: 25px;
+    letter-spacing: 2px;
+    color: #f0f0f0;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+.corner-ribbon.top-right {
+    top: 15px;
+    right: -50px;
+    left: auto;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+div {
+    .newRibbon{
+background: #8DC63F;
+    }
+    .slotsRibbon{
+background: #373737,;
+    }
+    .topRibbon{
+background: #FCFCFC,;
+    }
+}
+
+.info-on-hover {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+:hover .info-on-hover {
+    opacity: 1;
+}
+.games-list-card:hover .mat-card-image {
+  opacity: 0.3;
+}
+.text {
+    color: white;
+    font-size: 16px;
+    padding: 16px 32px;
+}
