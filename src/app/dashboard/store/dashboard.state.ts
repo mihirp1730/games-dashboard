@@ -1,10 +1,16 @@
-import { IGames } from '../games.model';
+import { IGames, IJackpot } from '../games.model';
 
 export interface IGamesState {
   games: IGames[];
-  selectedGames: IGames;
+  newGames: IGames[];
+  isLoadingWhileGetting: boolean;
+  jackpots: IJackpot[];
+  gamesWithAmount: IGames[];
 }
-export interface GamesState {
-  games: null;
-  selectedGames: null;
-}
+export const initialState: IGamesState = {
+  games: [],
+  newGames: [],
+  isLoadingWhileGetting: false,
+  jackpots: [],
+  gamesWithAmount: [],
+};

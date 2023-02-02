@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { IGames, ECategory } from '../games.model';
+import { IGames, ECategory, IJackpot } from '../games.model';
 
 @Component({
   selector: 'app-new-games',
@@ -8,5 +8,6 @@ import { IGames, ECategory } from '../games.model';
 })
 export class NewGamesComponent {
   @Input() gamesList: IGames;
+  @Input() jackpotList: IJackpot;
   readonly eCategory = ECategory;
 }

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { DashboardGamesComponent } from './dashboard-games/dashboard-games.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NewGamesComponent } from './new-games/new-games.component';
-import { GameResolver } from './games.resolver';
+// import { GameResolver } from './games.resolver';
 
 const routes: Routes = [
   {
@@ -11,13 +11,9 @@ const routes: Routes = [
     component: DashboardGamesComponent,
     children: [
       {
-        path: '',
+        path: 'new-games',
         pathMatch: 'full',
-        component: DashboardGamesComponent,
-        resolve: {
-          games: GameResolver,
-          // jackpots: JackpotResolver,
-        },
+        component: NewGamesComponent,
       },
     ],
   },

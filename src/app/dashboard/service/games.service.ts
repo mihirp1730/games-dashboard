@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { IGames, IJackpot } from '../games.model';
-import { IJackpotState } from '../store/jackpot.state';
+import { IGames, IGetGames, IGetJackpot } from '../games.model';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -17,9 +16,8 @@ export class GamesService {
     return this.http.get<IGames[]>(this.baseURL + 'games.php');
   }
 
-  getJackpots(): Observable<IJackpotState> {
-    console.log(this.baseURL);
+  getJackpots() {
     const url = `${this.baseURL}`;
-    return this.http.get<IJackpotState>(this.baseURL + 'jackpots.php');
+    return this.http.get<IGetJackpot>(this.baseURL + 'jackpots.php');
   }
 }

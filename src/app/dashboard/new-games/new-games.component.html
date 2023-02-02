@@ -1,16 +1,14 @@
 <mat-card class="games-list-card">
   <img mat-card-image [src]="gamesList.image" [alt]="gamesList.id" />
+  <div class="amount" *ngIf="gamesList.jackpotAmount">
+    £ {{ gamesList.jackpotAmount }}
+  </div>
   <div *ngFor="let category of gamesList.categories">
-    <div class="corner-ribbon top-right sticky" *ngIf="category">
-      <div
-        [ngClass]="{
-          newRibbon: category === eCategory.New,
-          slotsRibbon: category === eCategory.Slots,
-          topRibbon: category === eCategory.Top
-        }"
-      >
-        {{ category | titlecase }}
-      </div>
+    <div
+      class="corner-ribbon top-right sticky"
+      *ngIf="category === eCategory.New || category === eCategory.Top"
+    >
+      {{ category | titlecase }}
     </div>
   </div>
   <div class="info-on-hover">

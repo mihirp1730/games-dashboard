@@ -1,9 +1,30 @@
-<ng-container class="container">
-  <div *ngIf="(games$ | async)?.length !== 0">
-    <div class="card-container">
-      <div *ngFor="let gamesList of games$ | async; trackBy: trackBy">
-        <app-new-games [gamesList]="gamesList"></app-new-games>
+<mat-tab-group
+  animationDuration="0ms"
+  #gamesheaderGroup
+  (selectedTabChange)="gameHeaderChanged($event)"
+  [selectedIndex]="selectedIndex"
+>
+  <mat-tab
+    *ngFor="let tabtitle of JHeader; let index = index"
+    class="tab-title"
+    [label]="tabtitle.name"
+  >
+    <ng-template mat-tab-label>{{ tabtitle.name }}</ng-template>
+    <ng-container class="container">
+      <div *ngIf="(filteredGames$ | async)?.length !== 0">
+        <div class="card-container">
+          <div
+            *ngFor="let gamesList of filteredGames$ | async; trackBy: trackBy"
+          >
+            <app-new-games [gamesList]="gamesList"></app-new-games>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+    <div *ngIf="(filteredGames$ | async)?.length === 0" class="no-game">
+      <div class="no-game-card-container">
+        <p>Games Not Available</p>
       </div>
     </div>
-  </div>
-</ng-container>
+  </mat-tab>
+</mat-tab-group>
